@@ -112,11 +112,7 @@ public class PlayerMovement : MonoBehaviour
             
         }
     }
-    //we chceck if the collision appear betwen two colliders or rigid bodys so (player-ground)
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
 
-    }
     //we create function that will tell us if the player is grounded
     private bool isGrounded()
     {
@@ -134,5 +130,12 @@ public class PlayerMovement : MonoBehaviour
         RaycastHit2D raycastHit = Physics2D.BoxCast(boxCollider.bounds.center, boxCollider.bounds.size, 0, new Vector2(transform.localScale.x,0), 0.1f, wallLayer);
         //we return raycastHit result( we check if it is not null so the player is standing on the ground so we return true in other scenario we return false do the player is not on the ground)
         return raycastHit.collider != null;
+    }
+    //we create variable that defines if a player can attack
+    public bool canAttack()
+    {
+        //we determine when player can attack in that case when player is not moving, is on the ground, and is not on the wall
+
+        return horizontalInput == 0 && isGrounded() && !onWall();
     }
 }
