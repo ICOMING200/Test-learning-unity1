@@ -1,6 +1,6 @@
 # Test-learning-unity1
 My first project in unity that will allow me to learn how to properly code a game
 # Mechanics:
-Walking, Jumping, wall jumping
+Walking, Jumping, wall jumping, shooting
 # Assets:
 Player Sprite : https://assetstore.unity.com/packages/2d/characters/dragon-warrior-free-93896
