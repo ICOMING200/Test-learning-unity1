@@ -25,13 +25,13 @@ public class CameraController : MonoBehaviour
     {
         //Room Camera movement
         //we move smoothly camera to its destination (target, destination, velocity, speed)
-        //transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosX, transform.position.y, transform.position.z), ref velocity, speed);
+        transform.position = Vector3.SmoothDamp(transform.position, new Vector3(currentPosX, transform.position.y, transform.position.z), ref velocity, speed);
 
 
         //Following player movement
-        transform.position = new Vector3(player.position.x + lookAhead, transform.position.y, transform.position.z);
+        //transform.position = new Vector3(player.position.x + lookAhead, transform.position.y, transform.position.z);
         //we set the lookAhead value so when the starting value for lookAhead is 2 and player is facing right(1) the lookAhead is 2 but when player is facing left(-1) the value is -2
-        lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
+        //lookAhead = Mathf.Lerp(lookAhead, (aheadDistance * player.localScale.x), Time.deltaTime * cameraSpeed);
     }
 
     public void MoveToNewRoom(Transform _newRoom)
